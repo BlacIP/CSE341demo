@@ -4,14 +4,14 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
 const connectDb = require('./database/database');
-const userRoutes = require('./api/user');
+//const userRoutes = require('./api/user'); 
 
 
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/', require('./routes')); 
-app.use('/api/user', userRoutes);
+//app.use('/api/user', userRoutes);
 
 // Since connectDb is async, we should handle it properly
 const startServer = async () => {
